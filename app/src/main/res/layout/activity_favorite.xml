@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical"
+    tools:context=".activities.FavoriteActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize">
+
+        <ImageView
+            android:layout_width="?attr/actionBarSize"
+            android:layout_height="?attr/actionBarSize"
+            android:foreground="?attr/selectableItemBackground"
+            android:onClick="onBackPress"
+            android:padding="16dp"
+            android:src="@drawable/ic_baseline_arrow_back_24"
+            android:tint="@color/colorAccent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:letterSpacing="0.1"
+            android:text="Favorite"
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/f20"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/divider"
+        android:background="#BCBCBC" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview_favorite_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:id="@+id/view_favorite_empty"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:paddingLeft="@dimen/horizontal_margin_16dp"
+        android:paddingRight="@dimen/horizontal_margin_16dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No result found"
+            android:textColor="@color/blackText1"
+            android:textSize="@dimen/f20" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="You have't add any item to your favorite list"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/blackText2"
+            android:textSize="@dimen/f14" />
+    </LinearLayout>
+</LinearLayout>

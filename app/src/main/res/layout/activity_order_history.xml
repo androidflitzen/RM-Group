@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical"
+    tools:context=".activities.OrderHistoryActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize">
+
+        <ImageView
+            android:layout_width="?attr/actionBarSize"
+            android:layout_height="?attr/actionBarSize"
+            android:foreground="?attr/selectableItemBackground"
+            android:onClick="onBackPress"
+            android:padding="16dp"
+            android:src="@drawable/ic_baseline_arrow_back_24"
+            android:tint="@color/colorAccent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:letterSpacing="0.1"
+            android:text="My Orders"
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/f20"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/divider"
+        android:background="#BCBCBC" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview_order_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/view_order_list_empty"
+        android:layout_width="match_parent"
+        android:visibility="gone"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="No result found!"
+        android:textColor="@color/blackText3"
+        android:textSize="20sp" />
+</LinearLayout>

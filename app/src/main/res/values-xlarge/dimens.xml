@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="f10">14dp</dimen>
+    <dimen name="f12">16dp</dimen>
+    <dimen name="f14">18dp</dimen>
+    <dimen name="f16">20dp</dimen>
+    <dimen name="f18">22dp</dimen>
+    <dimen name="f20">24dp</dimen>
+    <dimen name="f22">26dp</dimen>
+    <dimen name="f24">28dp</dimen>
+    <dimen name="f28">32dp</dimen>
+
+    <dimen name="horizontal_margin_0dp">80dp</dimen>
+    <dimen name="horizontal_margin_10dp">90dp</dimen>
+    <dimen name="horizontal_margin_16dp">106dp</dimen>
+
+</resources>

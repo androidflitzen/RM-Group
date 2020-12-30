@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/txt_dialog_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Select Value"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/f16" />
+
+    <TextView
+        android:id="@+id/txt_percentage_value"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:text="-%"
+        android:textSize="@dimen/f22"
+        android:textColor="@android:color/black"/>
+
+    <SeekBar
+        android:id="@+id/seekbar_percentage"
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="right"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_dialog_cancel"
+            style="@style/Widget.AppCompat.Button.Borderless.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:includeFontPadding="false"
+            android:text="Cancel"
+            android:textColor="@color/blackText2"
+            android:textSize="@dimen/f14" />
+
+        <Button
+            android:id="@+id/btn_dialog_save"
+            style="@style/Widget.AppCompat.Button.Borderless.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:text="SET"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/f14" />
+    </LinearLayout>
+</LinearLayout>

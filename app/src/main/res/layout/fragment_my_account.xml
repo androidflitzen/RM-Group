@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical"
+    tools:context=".fragment.MyAccountFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize">
+
+        <ImageView
+            android:id="@+id/btn_my_account_back"
+            android:layout_width="?attr/actionBarSize"
+            android:layout_height="?attr/actionBarSize"
+            android:foreground="?attr/selectableItemBackground"
+            android:padding="16dp"
+            android:src="@drawable/ic_baseline_arrow_back_24"
+            android:tint="@color/colorAccent" />
+
+        <TextView
+            android:id="@+id/txt_silver_items_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:letterSpacing="0.1"
+            android:text="My Account"
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/f20"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/divider"
+        android:background="#BCBCBC" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:elevation="0dp"
+            app:cardBackgroundColor="@color/colorPrimary"
+            app:cardCornerRadius="40dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="10dp"
+                android:src="@drawable/ic_outline_account_circle_24"
+                android:tint="@android:color/white" />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/txt_my_account_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="-"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/f20" />
+
+        <LinearLayout
+            android:id="@+id/btn_my_account_profile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:clickable="true"
+            android:foreground="?attr/selectableItemBackground"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_outline_account_circle_24"
+                android:tint="@android:color/black" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:drawableRight="@drawable/ic_baseline_chevron_right_24"
+                android:gravity="center|left"
+                android:text="Profile"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/f16" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btn_my_account_cart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:foreground="?attr/selectableItemBackground"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_outline_shopping_cart_24"
+                android:tint="@android:color/black" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:drawableRight="@drawable/ic_baseline_chevron_right_24"
+                android:gravity="center|left"
+                android:text="My Cart"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/f14" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btn_my_account_order_history"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:foreground="?attr/selectableItemBackground"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_outline_library_books_24"
+                android:tint="@android:color/black" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:drawableRight="@drawable/ic_baseline_chevron_right_24"
+                android:gravity="center|left"
+                android:text="Order History"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/f16" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btn_my_account_favorites"
+            android:layout_width="match_parent"
+            android:visibility="gone"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:foreground="?attr/selectableItemBackground"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_baseline_favorite_24"
+                android:tint="@android:color/black" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:drawableRight="@drawable/ic_baseline_chevron_right_24"
+                android:gravity="center|left"
+                android:text="Favorites"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/f16" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btn_my_account_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:foreground="?attr/selectableItemBackground"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_baseline_storefront_24"
+                android:tint="@android:color/black" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:drawableRight="@drawable/ic_baseline_chevron_right_24"
+                android:gravity="center|left"
+                android:text="Address"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/f16" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btn_my_account_logout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:foreground="?attr/selectableItemBackground"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:padding="2dp"
+                android:src="@drawable/ic_logout"
+                android:tint="@android:color/black" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:gravity="center|left"
+                android:text="Logout"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/f16" />
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

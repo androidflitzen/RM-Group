@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.LoginActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/img_login_bg" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="@dimen/horizontal_margin_0dp"
+        android:layout_marginRight="@dimen/horizontal_margin_0dp">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            app:cardBackgroundColor="#61000000"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="SIGN IN"
+                    android:textColor="@android:color/white"
+                    android:textSize="25sp" />
+
+                <EditText
+                    android:id="@+id/edt_login_username"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/edt_login_style"
+                    android:hint="E-mail"
+                    android:imeOptions="actionNext"
+                    android:inputType="textEmailAddress"
+                    android:padding="16dp"
+                    android:textColor="@android:color/white"
+                    android:textColorHint="@color/whiteHint"
+                    android:textSize="@dimen/f16" />
+
+                <EditText
+                    android:id="@+id/edt_login_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/edt_login_style"
+                    android:hint="Password"
+                    android:imeOptions="actionDone"
+                    android:inputType="textPassword"
+                    android:padding="16dp"
+                    android:textColor="@android:color/white"
+                    android:textColorHint="@color/whiteHint"
+                    android:textSize="@dimen/f16" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_login_signin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="30dp"
+                    android:onClick="onSignInClick"
+                    android:foreground="?attr/selectableItemBackground"
+                    app:cardBackgroundColor="@color/colorPrimary"
+                    app:cardCornerRadius="25dp"
+                    app:cardElevation="0dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:paddingLeft="50dp"
+                        android:paddingRight="50dp"
+                        android:text="Sign In"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/f20" />
+                </androidx.cardview.widget.CardView>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Don't Have Account?"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/f14" />
+
+                    <TextView
+                        android:id="@+id/btn_login_crate_account"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Create Account"
+                        android:foreground="?attr/selectableItemBackground"
+                        android:clickable="true"
+                        android:layout_marginLeft="5dp"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/f14"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+</RelativeLayout>

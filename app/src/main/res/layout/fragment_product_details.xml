@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical"
+    tools:context=".fragment.ProductDetailsFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize">
+
+        <ImageView
+            android:id="@+id/img_back"
+            android:layout_width="?attr/actionBarSize"
+            android:layout_height="?attr/actionBarSize"
+            android:foreground="?attr/selectableItemBackground"
+            android:padding="16dp"
+            android:src="@drawable/ic_baseline_arrow_back_24"
+            android:tint="@color/colorAccent" />
+
+        <TextView
+            android:id="@+id/txt_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:letterSpacing="0.1"
+            android:text="-"
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/f20"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/divider"
+        android:background="#BCBCBC" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="@dimen/horizontal_margin_0dp"
+        android:paddingRight="@dimen/horizontal_margin_0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="130dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txt_product_list_unit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
+                android:paddingRight="10dp"
+                android:text="Quantity In -"
+                android:textColor="@color/blackText2"
+                android:textStyle="bold" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerview_product_details_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical"
+                android:padding="8dp"
+                android:weightSum="8">
+
+                <include
+                    android:id="@+id/layout_1"
+                    android:visibility="gone"
+                    layout="@layout/view_product_variation_per_selector" />
+
+                <include
+                    android:id="@+id/layout_2"
+                    android:visibility="gone"
+                    layout="@layout/view_product_variation_radio_dropdown" />
+
+                <include
+                    android:id="@+id/layout_3"
+                    android:visibility="gone"
+                    layout="@layout/view_product_variation_edittext" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/edt_product_details_notes"
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:hint="Notes"
+                        android:padding="12dp"
+                        android:textSize="@dimen/f14"
+                        android:textColor="@color/blackText1"
+                        android:textColorHint="@color/blackText3"
+                        android:gravity="top"
+                        android:inputType="textCapSentences"
+                        android:background="@drawable/bg_edittext"/>
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:id="@+id/card_product_details_add_to_cart"
+                    android:layout_height="50dp"
+                    android:clickable="true"
+                    android:foreground="?attr/selectableItemBackground"
+                    app:cardBackgroundColor="@color/green"
+                    app:cardCornerRadius="25dp"
+                    app:cardElevation="0dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:paddingLeft="50dp"
+                        android:paddingRight="50dp"
+                        android:text="Add to cart"
+                        android:textAllCaps="true"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/f16"
+                        android:textStyle="bold" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:id="@+id/card_product_details_already_in_cart"
+                    android:layout_height="50dp"
+                    android:visibility="gone"
+                    android:clickable="true"
+                    android:foreground="?attr/selectableItemBackground"
+                    app:cardBackgroundColor="#DDDDDD"
+                    app:cardCornerRadius="25dp"
+                    app:cardElevation="0dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:paddingLeft="50dp"
+                        android:paddingRight="50dp"
+                        android:text="Update Cart"
+                        android:textAllCaps="true"
+                        android:textColor="@color/blackText1"
+                        android:textSize="@dimen/f16"
+                        android:textStyle="bold" />
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>
