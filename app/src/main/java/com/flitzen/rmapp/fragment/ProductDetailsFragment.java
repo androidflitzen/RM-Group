@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.SeekBar;
 import android.widget.TextView;
@@ -56,6 +57,10 @@ public class ProductDetailsFragment extends Fragment {
     View layoutOfVariation2;
     @BindView(R.id.layout_3)
     View layoutOfVariation3;
+    @BindView(R.id.layout_4)
+    View layoutOfVariation4;
+    @BindView(R.id.layout_5)
+    View layoutOfVariation5;
 
     @BindView(R.id.view_product_details_v2_vity)
     View viewV2Vity;
@@ -63,6 +68,10 @@ public class ProductDetailsFragment extends Fragment {
     View viewV3Vity;
     @BindView(R.id.view_product_details_v3_type)
     View viewV3Type;
+    @BindView(R.id.view_product_details_v4_gop)
+    LinearLayout viewV4Type;
+    @BindView(R.id.view_product_details_v5_size)
+    LinearLayout viewV5Size;
 
     //Variation 1
     @BindView(R.id.txt_product_list_v1_soda)
@@ -85,6 +94,8 @@ public class ProductDetailsFragment extends Fragment {
     TextView txtResa;
 
     //Variation 2
+    @BindView(R.id.rdb_product_details_v2_pm60)
+    RadioButton rdbPm60;
     @BindView(R.id.rdb_product_details_v2_pm70)
     RadioButton rdbPm70;
     @BindView(R.id.rdb_product_details_v2_pmsil)
@@ -101,6 +112,15 @@ public class ProductDetailsFragment extends Fragment {
     EditText edtTouch;
     @BindView(R.id.tab_product_details_v3_type)
     TabLayout tabTypes;
+
+    //Variation 4
+    @BindView(R.id.tab_GOP_MILAN)
+    TabLayout tabGOPV4;
+
+    //Variation 5
+    @BindView(R.id.tab_size_selection)
+    TabLayout tabSizeSelection;
+
 
     @BindView(R.id.img_back)
     View btnBack;
@@ -204,6 +224,8 @@ public class ProductDetailsFragment extends Fragment {
                                 if (jObj.getBoolean("is_cart")) {
                                     isInCart = true;
                                 }
+
+                                edtNote.setText(jObj.getString("notes"));
 
                                 if (cartId == 0 && isInCart) {
                                     cartId = jObj.getInt("cv_id");
@@ -359,7 +381,9 @@ public class ProductDetailsFragment extends Fragment {
             txtFancy.setText((Helper.isNullOrEmpty(variation6) ? "0" : variation6) + "%");
             txtRava.setText((Helper.isNullOrEmpty(variation7) ? "0" : variation7) + "%");
             txtResa.setText((Helper.isNullOrEmpty(variation8) ? "0" : variation8) + "%");
-        } else if (categoryId == 10 || categoryId == 11 || categoryId == 14 || categoryId == 15 || categoryId == 16 || categoryId == 17 || categoryId == 18 || categoryId == 19 || categoryId == 20 || categoryId == 21 || categoryId == 22 || categoryId == 23 || categoryId == 24 || categoryId == 25 || categoryId == 26 || categoryId == 27 || categoryId == 28 || categoryId == 29 || categoryId == 30) {
+        } else if (categoryId == 10 || categoryId == 11 || categoryId == 14 || categoryId == 15 || categoryId == 16 || categoryId == 17 || categoryId == 18 || categoryId == 19 || categoryId == 20
+                || categoryId == 21 || categoryId == 22 || categoryId == 23 || categoryId == 24 || categoryId == 25 || categoryId == 26 || categoryId == 27 || categoryId == 28 || categoryId == 29
+                || categoryId == 30 || categoryId==39 || categoryId == 42) {
             layoutOfVariation2.setVisibility(View.VISIBLE);
             if (categoryId == 14 || categoryId == 15 || categoryId == 16 || categoryId == 17) {
                 viewV2Vity.setVisibility(View.VISIBLE);
@@ -373,11 +397,49 @@ public class ProductDetailsFragment extends Fragment {
                 viewV2Vity.setVisibility(View.GONE);
             }
             initLayout2Click();
-            if (rdbPm70.getText().toString().equals(variation1))
+            if (rdbPm70.getText().toString().equals(variation1)) {
+                rdbPm70.setVisibility(View.VISIBLE);
+                rdbPmSil.setVisibility(View.VISIBLE);
+                rdbPm60.setVisibility(View.GONE);
                 rdbPm70.setChecked(true);
-            else rdbPmSil.setChecked(true);
+            } else if (categoryId == 22 || categoryId == 24 || categoryId==23 || categoryId==39) {
+                rdbPm70.setVisibility(View.GONE);
+                rdbPmSil.setVisibility(View.GONE);
+                rdbPm60.setVisibility(View.VISIBLE);
+                rdbPm60.setChecked(true);
+            }else if(categoryId == 42){
+                rdbPm70.setVisibility(View.GONE);
+                rdbPmSil.setVisibility(View.VISIBLE);
+                rdbPm60.setVisibility(View.GONE);
+                rdbPmSil.setChecked(true);
+            } else {
+                rdbPm70.setVisibility(View.VISIBLE);
+                rdbPmSil.setVisibility(View.VISIBLE);
+                rdbPm60.setVisibility(View.GONE);
+                rdbPmSil.setChecked(true);
+            }
 
-        } /*else if (categoryId == 14) {
+            if(categoryId == 18){
+                layoutOfVariation3.setVisibility(View.VISIBLE);
+                initLayout3Click1();
+            }
+
+            if(categoryId == 21){
+                layoutOfVariation4.setVisibility(View.VISIBLE);
+                viewV4Type.setVisibility(View.VISIBLE);
+
+                for (int i = 0; i < tabGOPV4.getTabCount(); i++) {
+                    if (variation3.equals(tabGOPV4.getTabAt(i).getText().toString()))
+                        tabGOPV4.selectTab(tabGOPV4.getTabAt(i));
+                }
+            }
+        }
+        else if(categoryId == 43){
+            layoutOfVariation5.setVisibility(View.VISIBLE);
+            initLayout5Click();
+        }
+
+        /*else if (categoryId == 14) {
             layoutOfVariation3.setVisibility(View.VISIBLE);
             initLayout3Click();
             edtStamp.setText(variation1);
@@ -397,7 +459,7 @@ public class ProductDetailsFragment extends Fragment {
     }
 
     public void initLayout2Click() {
-        if (categoryId == 14 || categoryId == 17) {
+        if (categoryId == 14 || categoryId == 17 || categoryId == 15) {
             tabVity.removeTabAt(0);
             tabVity.removeTabAt(0);
         }
@@ -426,6 +488,35 @@ public class ProductDetailsFragment extends Fragment {
             }
         } else {
             viewV3Type.setVisibility(View.GONE);
+        }
+    }
+
+    public void initLayout3Click1() {
+        if (categoryId == 18) {
+            viewV3Type.setVisibility(View.VISIBLE);
+            tabTypes.removeTabAt(2);
+            tabTypes.removeTabAt(2);
+            tabTypes.removeTabAt(2);
+            for (int i = 0; i < tabTypes.getTabCount(); i++) {
+                if (variation3.equals(tabTypes.getTabAt(i).getText().toString()))
+                    tabTypes.selectTab(tabTypes.getTabAt(i));
+            }
+        }
+    }
+
+    public void initLayout4Click() {
+        if (categoryId == 21) {
+
+        }
+    }
+
+    public void initLayout5Click() {
+        if (categoryId == 43) {
+            viewV5Size.setVisibility(View.VISIBLE);
+            for (int i = 0; i < tabSizeSelection.getTabCount(); i++) {
+                if (variation1.equals(tabSizeSelection.getTabAt(i).getText().toString()))
+                    tabSizeSelection.selectTab(tabSizeSelection.getTabAt(i));
+            }
         }
     }
 
@@ -488,13 +579,13 @@ public class ProductDetailsFragment extends Fragment {
         }
 
         if (layoutOfVariation2.isShown()) {
-            if (!rdbPm70.isChecked() && !rdbPmSil.isChecked()) {
+            if (!rdbPm70.isChecked() && !rdbPmSil.isChecked() && !rdbPm60.isChecked()) {
                 Toast.makeText(getActivity(), "Select any one value of Stamp/Touch", Toast.LENGTH_SHORT).show();
                 return;
             }
         }
 
-        if (layoutOfVariation3.isShown()) {
+        /*if (layoutOfVariation3.isShown()) {
             if (edtStamp.getText().toString().trim().isEmpty()) {
                 edtStamp.setError("Enter value");
                 return;
@@ -503,7 +594,7 @@ public class ProductDetailsFragment extends Fragment {
                 edtTouch.setError("Enter value");
                 return;
             }
-        }
+        }*/
 
         String[] productId = new String[qtyProductCount];
         String[] productQty = new String[qtyProductCount];
@@ -546,21 +637,35 @@ public class ProductDetailsFragment extends Fragment {
         }
 
         if (layoutOfVariation2.isShown()) {
-            if (rdbPm70.isChecked())
+            if (rdbPm70.isChecked()) {
                 endFix += "&variation_1=" + API.utf8Value(rdbPm70.getText().toString());
-            else endFix += "&variation_1=" + API.utf8Value(rdbPmSil.getText().toString());
+            } else if (rdbPmSil.isChecked()) {
+                endFix += "&variation_1=" + API.utf8Value(rdbPmSil.getText().toString());
+            }else if (rdbPm60.isChecked()) {
+                endFix += "&variation_1=" + API.utf8Value(rdbPm60.getText().toString());
+            }
             if (viewV2Vity.isShown())
                 endFix += "&variation_2=" + API.utf8Value(tabVity.getTabAt(tabVity.getSelectedTabPosition()).getText().toString());
         }
 
         if (layoutOfVariation3.isShown()) {
-            endFix += "&variation_1=" + API.utf8Value(edtStamp.getText().toString());
-            endFix += "&variation_2=" + API.utf8Value(edtTouch.getText().toString());
+            //endFix += "&variation_1=" + API.utf8Value(edtStamp.getText().toString());
+            //endFix += "&variation_2=" + API.utf8Value(edtTouch.getText().toString());
             if (viewV3Type.isShown())
                 endFix += "&variation_3=" + API.utf8Value(tabTypes.getTabAt(tabTypes.getSelectedTabPosition()).getText().toString());
             if (viewV3Vity.isShown())
-                endFix += "&variation_3=" + API.utf8Value(tabVityV3.getTabAt(tabVityV3.getSelectedTabPosition()).getText().toString());
+                endFix += "&variation_4=" + API.utf8Value(tabVityV3.getTabAt(tabVityV3.getSelectedTabPosition()).getText().toString());
         }
+
+        if(layoutOfVariation4.isShown()){
+            endFix += "&variation_3=" + API.utf8Value(tabGOPV4.getTabAt(tabGOPV4.getSelectedTabPosition()).getText().toString());
+        }
+
+        if(layoutOfVariation5.isShown()){
+            endFix += "&variation_1=" + API.utf8Value(tabSizeSelection.getTabAt(tabSizeSelection.getSelectedTabPosition()).getText().toString());
+        }
+
+
         endFix += "&notes=" + API.utf8Value(edtNote.getText().toString());
         if (cartId != 0)
             endFix += "&cv_id=" + cartId;

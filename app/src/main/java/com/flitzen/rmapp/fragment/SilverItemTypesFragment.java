@@ -104,6 +104,7 @@ public class SilverItemTypesFragment extends Fragment {
 
     public void setData() {
         try {
+            System.out.println("========jsonData   "+jsonData.toString());
             JSONArray jsonArray = new JSONArray(jsonData);
             arrayList.clear();
             if (jsonArray.length() == 0) {

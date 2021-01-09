@@ -6,48 +6,8 @@
     android:layout_margin="8dp"
     android:orientation="vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Stamp/Touch"
-        android:textColor="@color/blackText1"
-        android:textSize="@dimen/f14" />
-
-    <RadioGroup
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:orientation="horizontal">
-
-        <RadioButton
-            android:id="@+id/rdb_product_details_v2_pm60"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Pm/60"
-            android:textColor="@color/blackText1"
-            android:textSize="@dimen/f16" />
-
-        <RadioButton
-            android:id="@+id/rdb_product_details_v2_pm70"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Pm/70"
-            android:layout_marginLeft="20dp"
-            android:textColor="@color/blackText1"
-            android:textSize="@dimen/f16" />
-
-        <RadioButton
-            android:id="@+id/rdb_product_details_v2_pmsil"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:text="Pm/Sil"
-            android:textColor="@color/blackText1"
-            android:textSize="@dimen/f16" />
-    </RadioGroup>
-
     <LinearLayout
-        android:id="@+id/view_product_details_v2_vity"
+        android:id="@+id/view_product_details_v5_size"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
@@ -56,17 +16,18 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="Vity"
+            android:text="Select Size"
             android:textColor="@color/blackText1"
             android:textSize="@dimen/f14" />
 
         <com.google.android.material.tabs.TabLayout
-            android:id="@+id/tab_product_details_v2_vity"
+            android:id="@+id/tab_size_selection"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             app:tabBackground="@drawable/bg_tab_selector"
             app:tabIndicatorHeight="0dp"
+            app:tabMode="scrollable"
             app:tabPaddingEnd="20dp"
             app:tabPaddingStart="20dp"
             app:tabSelectedTextColor="@android:color/white"
@@ -75,18 +36,31 @@
             <com.google.android.material.tabs.TabItem
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:text="1"
+                android:text="2.2"
                 android:visibility="gone" />
 
             <com.google.android.material.tabs.TabItem
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:text="3" />
+                android:text="2.4" />
 
             <com.google.android.material.tabs.TabItem
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:text="5" />
+                android:text="2.6" />
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:text="2.8" />
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:text="2.10" />
+
         </com.google.android.material.tabs.TabLayout>
+
     </LinearLayout>
+
 </LinearLayout>

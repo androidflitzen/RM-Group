@@ -61,7 +61,7 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
                         item.qty = 0;
                     else if (item.qty == 10 && categoryId == 18)
                         item.qty = 0;
-                    else if (item.qty == 20 && categoryId == 30)
+                    else if (item.qty == 1 && categoryId == 30)
                         item.qty = 0;
                     else item.qty = item.qty - 1;
                     notifyItemChanged(position);
@@ -83,7 +83,7 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
                 else if (item.qty == 0 && categoryId == 18)
                     item.qty = item.qty + 10;
                 else if (item.qty == 0 && categoryId == 30)
-                    item.qty = item.qty + 20;
+                    item.qty = item.qty + 1;
                 else item.qty = item.qty + 1;
                 notifyItemChanged(position);
             }
